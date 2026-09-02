@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Kremet Impex</title>
+
+    <meta name="description"
+        content="Explore Kremet Impex services including trading, product sourcing, import-export, wholesale supply and bulk order support.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .services-hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #08263c 0%, #0b3c5d 55%, #0b5da8 100%);
+            color: #ffffff;
+            padding: 105px 0 95px;
+        }
+
+        .services-hero::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            border: 80px solid rgba(255, 255, 255, 0.04);
+            right: -170px;
+            top: -170px;
+        }
+
+        .services-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 950px;
+        }
+
+        .services-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            color: #9bd8ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .services-label::before {
+            content: "";
+            width: 42px;
+            height: 2px;
+            background: #82ccfa;
+        }
+
+        .services-hero h1 {
+            font-size: clamp(54px, 7vw, 86px);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 28px;
+            max-width: 930px;
+        }
+
+        .services-hero h1 span {
+            color: #8fd2ff;
+        }
+
+        .services-hero p {
+            color: #d0e2ee;
+            max-width: 730px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .service-strip {
+            background: #ffffff;
+            box-shadow: 0 14px 38px rgba(11, 48, 77, 0.08);
+            position: relative;
+            z-index: 5;
+        }
+
+        .service-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .service-strip-item {
+            padding: 26px 20px;
+            text-align: center;
+            border-right: 1px solid #e1e8ee;
+        }
+
+        .service-strip-item:last-child {
+            border-right: 0;
+        }
+
+        .service-strip-item span {
+            display: block;
+            color: #76bbe5;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .service-strip-item strong {
+            color: #12324c;
+            font-size: 15px;
+        }
+
+        .services-intro {
+            padding: 90px 0 80px;
+        }
+
+        .services-intro-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .services-intro-left span {
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .services-intro-left h2 {
+            color: #12324c;
+            font-size: clamp(40px, 5vw, 58px);
+            line-height: 1.08;
+            margin-top: 15px;
+        }
+
+        .services-intro-right p {
+            color: #637587;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .service-section {
+            padding: 78px 0;
+            border-top: 1px solid #e1e8ee;
+        }
+
+        .service-section.alt {
+            background: #f5f9fc;
+        }
+
+        .service-section-grid {
+            display: grid;
+            grid-template-columns: 150px 1.2fr 0.8fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .service-number {
+            color: #d6eaf7;
+            font-size: 78px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .service-content span {
+            color: #0b5da8;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .service-content h2 {
+            color: #12324c;
+            font-size: 38px;
+            margin: 12px 0 15px;
+        }
+
+        .service-content p {
+            color: #637587;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .service-detail-box {
+            background: #ffffff;
+            border: 1px solid #dce6ed;
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .service-section.alt .service-detail-box {
+            background: #eaf5fc;
+        }
+
+        .service-detail-box strong {
+            display: block;
+            color: #0b5da8;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .service-detail-box ul {
+            padding-left: 18px;
+            margin: 0;
+            color: #596d7f;
+        }
+
+        .service-detail-box li {
+            margin-bottom: 9px;
+            line-height: 1.55;
+        }
+
+        .process-section {
+            background: #092d48;
+            color: #ffffff;
+            padding: 90px 0;
+        }
+
+        .process-heading {
+            max-width: 720px;
+            margin-bottom: 50px;
+        }
+
+        .process-heading span {
+            color: #8fd2ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .process-heading h2 {
+            font-size: clamp(40px, 5vw, 58px);
+            margin: 15px 0;
+        }
+
+        .process-heading p {
+            color: #c4d8e5;
+            font-size: 17px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .process-step {
+            padding: 30px;
+            border-top: 2px solid #4c9ed4;
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .process-step:last-child {
+            border-right: 0;
+        }
+
+        .process-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0b5da8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: #c3d6e3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .service-final-cta {
+            padding: 85px 0;
+            background: #eef7fd;
+        }
+
+        .service-final-cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .service-final-cta span {
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .service-final-cta h2 {
+            color: #12324c;
+            font-size: clamp(36px, 4vw, 50px);
+            margin: 14px 0 10px;
+        }
+
+        .service-final-cta p {
+            color: #637587;
+            font-size: 17px;
+        }
+
+        @media (max-width: 950px) {
+
+            .service-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-strip-item {
+                border-bottom: 1px solid #e1e8ee;
+            }
+
+            .services-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-section-grid {
+                grid-template-columns: 90px 1fr;
+            }
+
+            .service-detail-box {
+                grid-column: 2;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-final-cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .services-hero {
+                padding: 70px 0;
+            }
+
+            .services-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .service-strip-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-strip-item {
+                border-right: 0;
+            }
+
+            .service-section-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-detail-box {
+                grid-column: 1;
+            }
+
+            .service-number {
+                font-size: 52px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="brand">
+            <img src="images/logo.jpeg" alt="Kremet Impex">
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html" class="nav-quote">Get a Quote</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="services-hero">
+
+    <div class="container">
+
+        <div class="services-hero-inner">
+
+            <div class="services-label">
+                OUR SERVICES
+            </div>
+
+            <h1>
+                From requirement to
+                <span>reliable supply.</span>
+            </h1>
+
+            <p>
+                Kremet Impex supports businesses with trading,
+                sourcing, wholesale supply, bulk requirements
+                and import-export related procurement solutions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-strip">
+
+    <div class="container service-strip-grid">
+
+        <div class="service-strip-item">
+            <span>01</span>
+            <strong>Trading</strong>
+        </div>
+
+        <div class="service-strip-item">
+            <span>02</span>
+            <strong>Product Sourcing</strong>
+        </div>
+
+        <div class="service-strip-item">
+            <span>03</span>
+            <strong>Import & Export</strong>
+        </div>
+
+        <div class="service-strip-item">
+            <span>04</span>
+            <strong>Wholesale Supply</strong>
+        </div>
+
+        <div class="service-strip-item">
+            <span>05</span>
+            <strong>Bulk Orders</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services-intro">
+
+    <div class="container services-intro-grid">
+
+        <div class="services-intro-left">
+
+            <span>HOW WE HELP</span>
+
+            <h2>
+                Supply solutions built around your business.
+            </h2>
+
+        </div>
+
+        <div class="services-intro-right">
+
+            <p>
+                Every procurement requirement is different.
+                Product specifications, quantities, delivery needs
+                and sourcing conditions can vary from one business to another.
+            </p>
+
+            <p>
+                Our approach begins with understanding the requirement
+                clearly and then identifying suitable sourcing and
+                supply options.
+            </p>
+
+            <p>
+                Whether you need chemicals, commercial goods,
+                wholesale quantities or a difficult-to-source item,
+                we aim to make the process straightforward and responsive.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-section">
+
+    <div class="container service-section-grid">
+
+        <div class="service-number">
+            01
+        </div>
+
+        <div class="service-content">
+
+            <span>TRADING</span>
+
+            <h2>
+                Commercial Product Trading
+            </h2>
+
+            <p>
+                We support businesses with product trading across
+                multiple categories and help customers procure products
+                based on commercial specifications, quantity and application.
+            </p>
+
+        </div>
+
+        <div class="service-detail-box">
+
+            <strong>SUITABLE FOR</strong>
+
+            <ul>
+                <li>Regular procurement requirements</li>
+                <li>Commercial product supply</li>
+                <li>Recurring business requirements</li>
+                <li>Multi-category purchasing</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-section alt">
+
+    <div class="container service-section-grid">
+
+        <div class="service-number">
+            02
+        </div>
+
+        <div class="service-content">
+
+            <span>PRODUCT SOURCING</span>
+
+            <h2>
+                Requirement-Based Sourcing
+            </h2>
+
+            <p>
+                Share your product name, code, CAS number,
+                grade, specification or pack-size requirement
+                and we can evaluate suitable sourcing options.
+            </p>
+
+        </div>
+
+        <div class="service-detail-box">
+
+            <strong>YOU CAN SHARE</strong>
+
+            <ul>
+                <li>Product name or product code</li>
+                <li>CAS number</li>
+                <li>Grade or specification</li>
+                <li>Required quantity or pack size</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-section">
+
+    <div class="container service-section-grid">
+
+        <div class="service-number">
+            03
+        </div>
+
+        <div class="service-content">
+
+            <span>IMPORT & EXPORT</span>
+
+            <h2>
+                Domestic & International Sourcing
+            </h2>
+
+            <p>
+                We support sourcing and commercial requirements
+                involving domestic as well as international supply,
+                including import and export related enquiries.
+            </p>
+
+        </div>
+
+        <div class="service-detail-box">
+
+            <strong>SUPPORT INCLUDES</strong>
+
+            <ul>
+                <li>International product sourcing</li>
+                <li>Domestic procurement</li>
+                <li>Import-related requirements</li>
+                <li>Export-related enquiries</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-section alt">
+
+    <div class="container service-section-grid">
+
+        <div class="service-number">
+            04
+        </div>
+
+        <div class="service-content">
+
+            <span>WHOLESALE SUPPLY</span>
+
+            <h2>
+                Supply for Commercial Quantities
+            </h2>
+
+            <p>
+                We support distributors, institutions,
+                laboratories and businesses that require
+                products in wholesale or recurring commercial quantities.
+            </p>
+
+        </div>
+
+        <div class="service-detail-box">
+
+            <strong>IDEAL FOR</strong>
+
+            <ul>
+                <li>Distributors</li>
+                <li>Laboratories</li>
+                <li>Institutions</li>
+                <li>Commercial buyers</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-section">
+
+    <div class="container service-section-grid">
+
+        <div class="service-number">
+            05
+        </div>
+
+        <div class="service-content">
+
+            <span>BULK ORDERS</span>
+
+            <h2>
+                Large-Quantity Procurement Support
+            </h2>
+
+            <p>
+                For larger-volume requirements,
+                we assist customers with quantity-based sourcing,
+                quotation and commercial supply coordination.
+            </p>
+
+        </div>
+
+        <div class="service-detail-box">
+
+            <strong>SHARE WITH US</strong>
+
+            <ul>
+                <li>Product requirement</li>
+                <li>Required quantity</li>
+                <li>Delivery location</li>
+                <li>Expected timeline</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="process-section">
+
+    <div class="container">
+
+        <div class="process-heading">
+
+            <span>HOW IT WORKS</span>
+
+            <h2>
+                A simple path from enquiry to supply.
+            </h2>
+
+            <p>
+                We keep the sourcing process clear and focused on
+                the actual commercial requirement.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-step">
+
+                <div class="process-circle">
+                    1
+                </div>
+
+                <h3>
+                    Share Requirement
+                </h3>
+
+                <p>
+                    Send us the product, specification,
+                    quantity and delivery details.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-circle">
+                    2
+                </div>
+
+                <h3>
+                    We Source
+                </h3>
+
+                <p>
+                    We review the requirement and
+                    evaluate suitable sourcing options.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-circle">
+                    3
+                </div>
+
+                <h3>
+                    Quotation
+                </h3>
+
+                <p>
+                    Relevant product and commercial
+                    information is shared with you.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-circle">
+                    4
+                </div>
+
+                <h3>
+                    Supply Support
+                </h3>
+
+                <p>
+                    We coordinate the confirmed
+                    requirement through the supply process.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-final-cta">
+
+    <div class="container service-final-cta-box">
+
+        <div>
+
+            <span>HAVE A REQUIREMENT?</span>
+
+            <h2>
+                Tell us what you're looking for.
+            </h2>
+
+            <p>
+                Share your product details and our team
+                will assist you with sourcing and quotation options.
+            </p>
+
+        </div>
+
+        <a href="contact.html"
+           class="button primary-button">
+
+            Send Your Requirement
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <img src="images/logo.jpeg" alt="Kremet Impex">
+
+                <p>
+                    Trading Excellence.<br>
+                    Delivering Trust.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Company</h4>
+
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Products</h4>
+
+                <a href="products.html">Product Catalogue</a>
+                <a href="products.html">Laboratory Chemicals</a>
+                <a href="products.html">Industrial Chemicals</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <a href="tel:+917400031404">
+                    +91 7400031404
+                </a>
+
+                <a href="mailto:kremetimpex@gmail.com">
+                    kremetimpex@gmail.com
+                </a>
+
+                <span>
+                    Mulund West, Mumbai
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Kremet Impex. All rights reserved.
+            </p>
+
+            <p>
+                GSTIN: 27AAWFK2672B1ZI
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<a href="https://wa.me/917400031404"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    WhatsApp
+
+</a>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Kremet Impex</title>
+
+    <meta name="description"
+        content="Learn about Kremet Impex, a Mumbai-based trading and sourcing company focused on reliable supply, transparent communication and long-term business relationships.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .about-new-hero {
+            position: relative;
+            overflow: hidden;
+            background: #f5f9fc;
+            padding: 105px 0 120px;
+        }
+
+        .about-new-hero::before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            background: rgba(78, 174, 230, 0.12);
+            right: -170px;
+            top: -240px;
+        }
+
+        .about-new-hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 60px solid rgba(11, 93, 168, 0.05);
+            right: 13%;
+            bottom: -160px;
+        }
+
+        .about-new-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 930px;
+        }
+
+        .about-new-hero .about-small-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .about-new-hero .about-small-title::before {
+            content: "";
+            width: 42px;
+            height: 2px;
+            background: #0b5da8;
+        }
+
+        .about-new-hero h1 {
+            color: #102f4a;
+            font-size: clamp(52px, 7vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+        }
+
+        .about-new-hero h1 span {
+            color: #0b5da8;
+        }
+
+        .about-new-hero-description {
+            max-width: 710px;
+            color: #596d7f;
+            font-size: 19px;
+            line-height: 1.75;
+        }
+
+        .about-highlights {
+            position: relative;
+            z-index: 5;
+            margin-top: -55px;
+        }
+
+        .about-highlights-box {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 55px rgba(16, 47, 74, 0.12);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+        }
+
+        .about-highlight {
+            padding: 30px 28px;
+            border-right: 1px solid #e4edf3;
+        }
+
+        .about-highlight:last-child {
+            border-right: none;
+        }
+
+        .about-highlight strong {
+            display: block;
+            color: #0b5da8;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .about-highlight span {
+            color: #687b8d;
+            font-size: 13px;
+        }
+
+        .about-story-new {
+            padding: 105px 0 90px;
+        }
+
+        .about-story-grid-new {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-story-label {
+            position: sticky;
+            top: 125px;
+        }
+
+        .about-story-label span {
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .about-story-label h2 {
+            color: #12324c;
+            font-size: clamp(38px, 4vw, 56px);
+            line-height: 1.08;
+            margin-top: 16px;
+        }
+
+        .about-story-content-new {
+            border-left: 1px solid #dce6ed;
+            padding-left: 55px;
+        }
+
+        .story-lead {
+            color: #173d59;
+            font-size: 26px;
+            line-height: 1.5;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .about-story-content-new p:not(.story-lead) {
+            color: #637587;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .story-quote {
+            margin-top: 36px;
+            padding: 28px 30px;
+            background: #edf7fd;
+            border-left: 4px solid #0b5da8;
+        }
+
+        .story-quote p {
+            color: #12324c !important;
+            font-size: 20px !important;
+            font-weight: 600;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
+
+        .mission-vision-new {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .mission-panel,
+        .vision-panel {
+            min-height: 440px;
+            padding: 75px max(6vw, 50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mission-panel {
+            background: #0b5da8;
+            color: #ffffff;
+        }
+
+        .vision-panel {
+            background: #092d48;
+            color: #ffffff;
+        }
+
+        .mission-panel span,
+        .vision-panel span {
+            color: #9ed8ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+
+        .mission-panel h2,
+        .vision-panel h2 {
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .mission-panel p,
+        .vision-panel p {
+            color: #dbeaf4;
+            font-size: 17px;
+            line-height: 1.75;
+            max-width: 570px;
+        }
+
+        .values-new {
+            padding: 95px 0;
+            background: #ffffff;
+        }
+
+        .values-new-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .values-new-heading div:first-child {
+            max-width: 600px;
+        }
+
+        .values-new-heading span {
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .values-new-heading h2 {
+            color: #12324c;
+            font-size: clamp(38px, 4vw, 54px);
+            line-height: 1.1;
+            margin-top: 13px;
+        }
+
+        .values-new-heading p {
+            color: #68798a;
+            max-width: 430px;
+        }
+
+        .values-new-list {
+            border-top: 1px solid #dce6ed;
+        }
+
+        .value-new-row {
+            display: grid;
+            grid-template-columns: 110px 260px 1fr;
+            align-items: center;
+            gap: 35px;
+            padding: 30px 0;
+            border-bottom: 1px solid #dce6ed;
+            transition: 0.25s ease;
+        }
+
+        .value-new-row:hover {
+            padding-left: 18px;
+            background: #f8fbfd;
+        }
+
+        .value-new-number {
+            color: #9acbea;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .value-new-row h3 {
+            color: #12324c;
+            font-size: 22px;
+        }
+
+        .value-new-row p {
+            color: #68798a;
+            line-height: 1.7;
+        }
+
+        .why-about-new {
+            background:
+                radial-gradient(circle at 15% 25%, rgba(74, 171, 231, 0.16), transparent 25%),
+                linear-gradient(135deg, #071f32, #0b3b5e);
+            padding: 95px 0;
+            color: #ffffff;
+        }
+
+        .why-about-grid-new {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .why-about-intro span {
+            color: #8ed1ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .why-about-intro h2 {
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1.08;
+            margin: 15px 0 22px;
+        }
+
+        .why-about-intro p {
+            color: #bdd2e0;
+            font-size: 17px;
+            line-height: 1.75;
+            max-width: 560px;
+        }
+
+        .why-about-points {
+            display: grid;
+            gap: 0;
+        }
+
+        .why-about-point {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 22px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .why-about-point:first-child {
+            padding-top: 0;
+        }
+
+        .why-about-point-number {
+            color: #70c5f4;
+            font-weight: 700;
+        }
+
+        .why-about-point h3 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .why-about-point p {
+            color: #bdd2e0;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .about-final-cta {
+            padding: 85px 0;
+            background: #f5f9fc;
+            text-align: center;
+        }
+
+        .about-final-cta-inner {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .about-final-cta span {
+            color: #0b5da8;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .about-final-cta h2 {
+            color: #12324c;
+            font-size: clamp(38px, 4vw, 54px);
+            line-height: 1.1;
+            margin: 16px 0;
+        }
+
+        .about-final-cta p {
+            color: #68798a;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 950px) {
+
+            .about-highlights-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-highlight {
+                border-bottom: 1px solid #e4edf3;
+            }
+
+            .about-story-grid-new {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-story-label {
+                position: static;
+            }
+
+            .about-story-content-new {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .mission-vision-new {
+                grid-template-columns: 1fr;
+            }
+
+            .values-new-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .value-new-row {
+                grid-template-columns: 80px 220px 1fr;
+            }
+
+            .why-about-grid-new {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .about-new-hero {
+                padding: 70px 0 100px;
+            }
+
+            .about-new-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .about-highlights-box {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlight {
+                border-right: none;
+            }
+
+            .about-story-new {
+                padding: 80px 0 65px;
+            }
+
+            .story-lead {
+                font-size: 21px;
+            }
+
+            .mission-panel,
+            .vision-panel {
+                min-height: auto;
+                padding: 58px 7%;
+            }
+
+            .values-new {
+                padding: 70px 0;
+            }
+
+            .value-new-row {
+                grid-template-columns: 55px 1fr;
+                gap: 15px;
+            }
+
+            .value-new-row p {
+                grid-column: 2;
+            }
+
+            .why-about-new {
+                padding: 70px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="brand">
+            <img src="images/logo.jpeg" alt="Kremet Impex">
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html" class="active">
+                About Us
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="contact.html" class="nav-quote">
+                Get a Quote
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="about-new-hero">
+
+    <div class="container">
+
+        <div class="about-new-hero-content">
+
+            <div class="about-small-title">
+                ABOUT KREMET IMPEX
+            </div>
+
+            <h1>
+                Business is built on
+                <span>relationships.</span>
+            </h1>
+
+            <p class="about-new-hero-description">
+                Kremet Impex is a Mumbai-based trading and sourcing company
+                helping businesses access products through dependable service,
+                transparent communication and a practical approach to procurement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-highlights">
+
+    <div class="container">
+
+        <div class="about-highlights-box">
+
+            <div class="about-highlight">
+
+                <strong>Trading</strong>
+
+                <span>
+                    Multi-category commercial supply
+                </span>
+
+            </div>
+
+
+            <div class="about-highlight">
+
+                <strong>Sourcing</strong>
+
+                <span>
+                    Requirement-based procurement
+                </span>
+
+            </div>
+
+
+            <div class="about-highlight">
+
+                <strong>Wholesale</strong>
+
+                <span>
+                    Business and bulk quantities
+                </span>
+
+            </div>
+
+
+            <div class="about-highlight">
+
+                <strong>Import & Export</strong>
+
+                <span>
+                    Domestic and international requirements
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-story-new">
+
+    <div class="container about-story-grid-new">
+
+        <div class="about-story-label">
+
+            <span>OUR STORY</span>
+
+            <h2>
+                A simpler approach to sourcing.
+            </h2>
+
+        </div>
+
+
+        <div class="about-story-content-new">
+
+            <p class="story-lead">
+                Kremet Impex was created with a straightforward idea:
+                businesses should be able to source products with greater
+                clarity, reliability and confidence.
+            </p>
+
+            <p>
+                We work across multiple product categories and support
+                customers in identifying, sourcing and procuring products
+                according to their commercial requirements.
+            </p>
+
+            <p>
+                Our work includes chemicals, laboratory products,
+                industrial requirements, commercial goods, wholesale
+                quantities and custom sourcing requirements.
+            </p>
+
+            <p>
+                For us, a successful transaction is only one part of the
+                relationship. Clear communication, responsive service and
+                dependable support are equally important.
+            </p>
+
+            <p>
+                That is why our approach always begins with understanding
+                what the customer actually needs before recommending a
+                sourcing or supply solution.
+            </p>
+
+
+            <div class="story-quote">
+
+                <p>
+                    “Our goal is not simply to supply products.
+                    It is to become a dependable business partner.”
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="mission-vision-new">
+
+    <div class="mission-panel">
+
+        <span>OUR MISSION</span>
+
+        <h2>
+            Make business sourcing more dependable.
+        </h2>
+
+        <p>
+            To provide reliable trading and sourcing solutions through
+            transparent communication, responsive service and a strong
+            understanding of customer requirements.
+        </p>
+
+    </div>
+
+
+    <div class="vision-panel">
+
+        <span>OUR VISION</span>
+
+        <h2>
+            Build partnerships that last.
+        </h2>
+
+        <p>
+            To grow as a trusted trading and sourcing partner for
+            businesses by creating long-term relationships built around
+            reliability, flexibility and consistent service.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="values-new">
+
+    <div class="container">
+
+        <div class="values-new-heading">
+
+            <div>
+
+                <span>WHAT GUIDES US</span>
+
+                <h2>
+                    The principles behind our work.
+                </h2>
+
+            </div>
+
+            <p>
+                The way we communicate, source and support our customers
+                matters just as much as the products we supply.
+            </p>
+
+        </div>
+
+
+        <div class="values-new-list">
+
+
+            <div class="value-new-row">
+
+                <div class="value-new-number">
+                    01
+                </div>
+
+                <h3>Trust</h3>
+
+                <p>
+                    We believe dependable business relationships begin
+                    with honest and transparent communication.
+                </p>
+
+            </div>
+
+
+            <div class="value-new-row">
+
+                <div class="value-new-number">
+                    02
+                </div>
+
+                <h3>Reliability</h3>
+
+                <p>
+                    We aim to provide consistent support from the first
+                    enquiry through the sourcing and supply process.
+                </p>
+
+            </div>
+
+
+            <div class="value-new-row">
+
+                <div class="value-new-number">
+                    03
+                </div>
+
+                <h3>Customer Focus</h3>
+
+                <p>
+                    Every sourcing decision begins with understanding
+                    the customer's actual business requirement.
+                </p>
+
+            </div>
+
+
+            <div class="value-new-row">
+
+                <div class="value-new-number">
+                    04
+                </div>
+
+                <h3>Quality Focus</h3>
+
+                <p>
+                    Product specifications, requirements and expectations
+                    remain central to our sourcing approach.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="why-about-new">
+
+    <div class="container why-about-grid-new">
+
+        <div class="why-about-intro">
+
+            <span>WHY KREMET IMPEX</span>
+
+            <h2>
+                Flexible enough for different business needs.
+            </h2>
+
+            <p>
+                Businesses do not always need the same product,
+                quantity or sourcing solution. Our model is designed
+                around that flexibility.
+            </p>
+
+        </div>
+
+
+        <div class="why-about-points">
+
+
+            <div class="why-about-point">
+
+                <div class="why-about-point-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>Multiple Product Categories</h3>
+
+                    <p>
+                        Our trading activities are not limited to
+                        a single product category.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-about-point">
+
+                <div class="why-about-point-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>Bulk & Wholesale Support</h3>
+
+                    <p>
+                        We support businesses requiring commercial,
+                        wholesale and larger-volume quantities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-about-point">
+
+                <div class="why-about-point-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>Custom Sourcing</h3>
+
+                    <p>
+                        Customers can approach us with specific
+                        products, specifications and procurement needs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-about-point">
+
+                <div class="why-about-point-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>Responsive Communication</h3>
+
+                    <p>
+                        We aim to keep communication clear throughout
+                        the enquiry and sourcing process.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-final-cta">
+
+    <div class="container about-final-cta-inner">
+
+        <span>LET'S WORK TOGETHER</span>
+
+        <h2>
+            Looking for a dependable sourcing partner?
+        </h2>
+
+        <p>
+            Tell us what your business needs and our team
+            will assist you with the next step.
+        </p>
+
+        <a href="contact.html"
+           class="button primary-button">
+
+            Send Your Requirement
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.jpeg"
+                    alt="Kremet Impex">
+
+                <p>
+                    Trading Excellence.<br>
+                    Delivering Trust.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Company</h4>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Products</h4>
+
+                <a href="products.html">
+                    Product Catalogue
+                </a>
+
+                <a href="products.html">
+                    Laboratory Chemicals
+                </a>
+
+                <a href="products.html">
+                    Industrial Chemicals
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <a href="tel:+917400031404">
+                    +91 7400031404
+                </a>
+
+                <a href="mailto:kremetimpex@gmail.com">
+                    kremetimpex@gmail.com
+                </a>
+
+                <span>
+                    Mulund West, Mumbai
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Kremet Impex.
+                All rights reserved.
+            </p>
+
+            <p>
+                GSTIN: 27AAWFK2672B1ZI
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<a href="https://wa.me/917400031404"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    WhatsApp
+
+</a>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

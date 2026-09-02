@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Kremet Impex</title>
+
+    <meta name="description"
+        content="Contact Kremet Impex for product enquiries, sourcing requirements, wholesale supply, bulk orders and business quotations.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .contact-hero {
+            background:
+                radial-gradient(circle at 85% 15%, rgba(11, 103, 178, 0.12), transparent 28%),
+                linear-gradient(135deg, #f5fafe, #ffffff);
+            padding: 55px 0 65px;
+            border-bottom: 1px solid #dce7ef;
+        }
+
+        .contact-hero-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #0b67b2;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .contact-eyebrow::before {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: #0b67b2;
+        }
+
+        .contact-hero-left h1 {
+            color: #102f4a;
+            font-size: clamp(44px, 5vw, 64px);
+            line-height: 1.04;
+            letter-spacing: -1.2px;
+            margin: 0 0 18px;
+        }
+
+        .contact-hero-left h1 span {
+            color: #0b67b2;
+        }
+
+        .contact-hero-left > p {
+            color: #637789;
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0 0 28px;
+            max-width: 560px;
+        }
+
+        .quick-contact-list {
+            display: grid;
+            gap: 13px;
+            margin-bottom: 24px;
+        }
+
+        .quick-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .quick-contact-icon {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #e7f4fc;
+            color: #0b67b2;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .quick-contact-text span {
+            display: block;
+            color: #8a9aa8;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .quick-contact-text a,
+        .quick-contact-text p {
+            margin: 0;
+            color: #173a54;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .quick-contact-text a:hover {
+            color: #0b67b2;
+        }
+
+        .hero-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 47px;
+            padding: 0 20px;
+            background: #25d366;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .hero-whatsapp:hover {
+            background: #20bb5a;
+        }
+
+        .hero-enquiry-card {
+            background: #ffffff;
+            border: 1px solid #dbe6ee;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 18px 45px rgba(20, 60, 90, 0.09);
+        }
+
+        .hero-enquiry-header {
+            margin-bottom: 22px;
+        }
+
+        .hero-enquiry-header span {
+            color: #0b67b2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .hero-enquiry-header h2 {
+            color: #12324c;
+            font-size: 28px;
+            margin: 8px 0 6px;
+        }
+
+        .hero-enquiry-header p {
+            color: #7a8b99;
+            font-size: 13px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .enquiry-form {
+            display: grid;
+            gap: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #29465d;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cbd8e2;
+            background: #fbfdff;
+            color: #253e52;
+            border-radius: 8px;
+            padding: 11px 12px;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: 0.2s ease;
+        }
+
+        .form-group input,
+        .form-group select {
+            height: 43px;
+        }
+
+        .form-group textarea {
+            min-height: 88px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0b67b2;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(11, 103, 178, 0.08);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9aa8b4;
+        }
+
+        .submit-enquiry {
+            border: none;
+            background: #0b67b2;
+            color: #ffffff;
+            min-height: 46px;
+            border-radius: 8px;
+            padding: 0 22px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .submit-enquiry:hover {
+            background: #095895;
+        }
+
+        .form-note {
+            color: #8a99a6;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+
+        .contact-info-section {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 25px;
+        }
+
+        .office-card,
+        .hours-card {
+            border: 1px solid #dce7ee;
+            border-radius: 15px;
+            padding: 34px;
+            background: #f8fbfd;
+        }
+
+        .info-label {
+            color: #0b67b2;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .office-card h2,
+        .hours-card h2 {
+            color: #12324c;
+            font-size: 27px;
+            margin: 9px 0 12px;
+        }
+
+        .office-card p,
+        .hours-card p {
+            color: #687b8d;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .office-address {
+            margin-top: 20px !important;
+            padding-top: 18px;
+            border-top: 1px solid #dce6ed;
+            color: #173a54 !important;
+            font-weight: 600;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #dce6ed;
+            color: #637789;
+            font-size: 13px;
+        }
+
+        .hours-row strong {
+            color: #173a54;
+        }
+
+        .contact-bottom {
+            background: linear-gradient(135deg, #082b45, #0b4168);
+            padding: 60px 0;
+            color: #ffffff;
+        }
+
+        .contact-bottom-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .contact-bottom-text {
+            max-width: 650px;
+        }
+
+        .contact-bottom span {
+            color: #8fd2ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .contact-bottom h2 {
+            font-size: clamp(30px, 4vw, 42px);
+            margin: 11px 0;
+        }
+
+        .contact-bottom p {
+            color: #c8dbe7;
+            font-size: 15px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .contact-bottom a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 22px;
+            background: #ffffff;
+            color: #0b3b5c;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1050px) {
+
+            .contact-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .contact-hero-left {
+                max-width: 750px;
+            }
+
+        }
+
+        @media (max-width: 850px) {
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-bottom-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .contact-hero {
+                padding: 45px 0 55px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-enquiry-card {
+                padding: 24px 20px;
+            }
+
+            .office-card,
+            .hours-card {
+                padding: 26px 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="brand">
+            <img src="images/logo.jpeg" alt="Kremet Impex">
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Us</a>
+
+            <a href="products.html">Products</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="contact.html" class="active">
+                Contact Us
+            </a>
+
+            <a href="contact.html" class="nav-quote">
+                Get a Quote
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="contact-hero">
+
+    <div class="container contact-hero-grid">
+
+
+        <div class="contact-hero-left">
+
+            <div class="contact-eyebrow">
+                CONTACT KREMET IMPEX
+            </div>
+
+            <h1>
+                Let's discuss your
+                <span>requirement.</span>
+            </h1>
+
+            <p>
+                Looking for a product, quotation, bulk quantity or sourcing support?
+                Fill in the enquiry form and share your requirement directly with us.
+            </p>
+
+
+            <div class="quick-contact-list">
+
+
+                <div class="quick-contact-item">
+
+                    <div class="quick-contact-icon">
+                        P
+                    </div>
+
+                    <div class="quick-contact-text">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <a href="tel:+917400031404">
+                            +91 7400031404
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-contact-item">
+
+                    <div class="quick-contact-icon">
+                        E
+                    </div>
+
+                    <div class="quick-contact-text">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <a href="mailto:kremetimpex@gmail.com">
+                            kremetimpex@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-contact-item">
+
+                    <div class="quick-contact-icon">
+                        L
+                    </div>
+
+                    <div class="quick-contact-text">
+
+                        <span>
+                            Location
+                        </span>
+
+                        <p>
+                            Mulund West, Mumbai
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <a href="https://wa.me/917400031404"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="hero-whatsapp">
+
+                Chat on WhatsApp
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-enquiry-card">
+
+
+            <div class="hero-enquiry-header">
+
+                <span>
+                    SEND AN ENQUIRY
+                </span>
+
+                <h2>
+                    Tell us what you need
+                </h2>
+
+                <p>
+                    Fill in your details below and send your requirement directly to Kremet Impex.
+                </p>
+
+            </div>
+
+
+            <form class="enquiry-form" id="enquiryForm">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            required
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="company">
+                            Company Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            placeholder="Company name">
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            placeholder="Enter your email">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            required
+                            placeholder="+91">
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="requirementType">
+                            Requirement Type
+                        </label>
+
+                        <select id="requirementType">
+
+                            <option value="">
+                                Select requirement
+                            </option>
+
+                            <option>
+                                Product Enquiry
+                            </option>
+
+                            <option>
+                                Request a Quote
+                            </option>
+
+                            <option>
+                                Product Sourcing
+                            </option>
+
+                            <option>
+                                Wholesale Supply
+                            </option>
+
+                            <option>
+                                Bulk Order
+                            </option>
+
+                            <option>
+                                Import / Export
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Quantity
+                        </label>
+
+                        <input
+                            type="text"
+                            id="quantity"
+                            placeholder="Example: 10 kg">
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="product">
+                        Product / Requirement
+                    </label>
+
+                    <input
+                        type="text"
+                        id="product"
+                        placeholder="Product name, code, CAS number...">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Additional Details *
+                    </label>
+
+                    <textarea
+                        id="message"
+                        required
+                        placeholder="Specification, pack size, delivery location or any other details..."></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-enquiry">
+
+                    Send Enquiry on WhatsApp
+
+                </button>
+
+
+                <div class="form-note">
+                    Clicking Send Enquiry opens WhatsApp with your details already filled in.
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="contact-info-section">
+
+    <div class="container contact-info-grid">
+
+
+        <div class="office-card">
+
+            <span class="info-label">
+                OUR OFFICE
+            </span>
+
+            <h2>
+                Kremet Impex
+            </h2>
+
+            <p>
+                Contact our Mumbai office for product sourcing, wholesale supply,
+                quotations and commercial requirements.
+            </p>
+
+            <p class="office-address">
+                Office No. 226, 2nd Floor,<br>
+                Ecstasy Business Park,<br>
+                Near City of Joy, JSD Road,<br>
+                Mulund West, Mumbai – 400080,<br>
+                Maharashtra, India
+            </p>
+
+        </div>
+
+
+        <div class="hours-card">
+
+            <span class="info-label">
+                BUSINESS HOURS
+            </span>
+
+            <h2>
+                Working Hours
+            </h2>
+
+            <p>
+                Our team is available during regular business hours.
+            </p>
+
+
+            <div class="hours-row">
+
+                <strong>
+                    Monday – Saturday
+                </strong>
+
+                <span>
+                    10:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <strong>
+                    Sunday
+                </strong>
+
+                <span>
+                    Closed
+                </span>
+
+            </div>
+
+
+            <div class="hours-row">
+
+                <strong>
+                    GSTIN
+                </strong>
+
+                <span>
+                    27AAWFK2672B1ZI
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="contact-bottom">
+
+    <div class="container contact-bottom-inner">
+
+        <div class="contact-bottom-text">
+
+            <span>
+                QUICK SUPPORT
+            </span>
+
+            <h2>
+                Prefer WhatsApp?
+            </h2>
+
+            <p>
+                Send us your product name, code, CAS number, quantity or specification directly.
+            </p>
+
+        </div>
+
+
+        <a href="https://wa.me/917400031404"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            WhatsApp Kremet Impex
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.jpeg"
+                    alt="Kremet Impex">
+
+                <p>
+                    Trading Excellence.<br>
+                    Delivering Trust.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Products
+                </h4>
+
+                <a href="products.html">
+                    Product Catalogue
+                </a>
+
+                <a href="products.html">
+                    Laboratory Chemicals
+                </a>
+
+                <a href="products.html">
+                    Industrial Chemicals
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a href="tel:+917400031404">
+                    +91 7400031404
+                </a>
+
+                <a href="mailto:kremetimpex@gmail.com">
+                    kremetimpex@gmail.com
+                </a>
+
+                <span>
+                    Mulund West, Mumbai
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Kremet Impex. All rights reserved.
+            </p>
+
+            <p>
+                GSTIN: 27AAWFK2672B1ZI
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<a href="https://wa.me/917400031404"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    WhatsApp
+
+</a>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+    const enquiryForm =
+        document.getElementById("enquiryForm");
+
+
+    enquiryForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const company =
+                document.getElementById("company").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const requirementType =
+                document.getElementById("requirementType").value;
+
+            const quantity =
+                document.getElementById("quantity").value.trim();
+
+            const product =
+                document.getElementById("product").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            const whatsappMessage =
+`Hello Kremet Impex,
+
+I would like to send a business enquiry.
+
+Name: ${name}
+Company: ${company || "-"}
+Email: ${email}
+Phone: ${phone}
+Requirement Type: ${requirementType || "-"}
+Product / Requirement: ${product || "-"}
+Quantity: ${quantity || "-"}
+
+Additional Details:
+${message}`;
+
+
+            const whatsappUrl =
+                "https://wa.me/917400031404?text=" +
+                encodeURIComponent(whatsappMessage);
+
+
+            window.open(
+                whatsappUrl,
+                "_blank"
+            );
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

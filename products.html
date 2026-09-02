@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Catalogue | Kremet Impex</title>
+
+    <meta name="description"
+        content="Search the Kremet Impex product catalogue by product name, code, item number, CAS number, specification and HSN.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .products-page {
+            background: #f7fafc;
+            min-height: 100vh;
+        }
+
+        .products-hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 88% 25%,
+                    rgba(11, 103, 178, 0.13),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    120deg,
+                    #ffffff 0%,
+                    #f1f8fd 55%,
+                    #e9f5fc 100%
+                );
+            padding: 80px 0 105px;
+            border-bottom: 1px solid #dce8f0;
+        }
+
+        .products-hero::after {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            border: 55px solid rgba(11, 103, 178, 0.04);
+            border-radius: 50%;
+            right: -120px;
+            top: -170px;
+        }
+
+        .products-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .products-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+            color: #0b67b2;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .products-eyebrow::before {
+            content: "";
+            width: 38px;
+            height: 2px;
+            background: #0b67b2;
+        }
+
+        .products-hero h1 {
+            color: #102f4a;
+            font-size: clamp(48px, 6vw, 72px);
+            line-height: 1.03;
+            letter-spacing: -1.5px;
+            margin: 0 0 22px;
+        }
+
+        .products-hero h1 span {
+            color: #0b67b2;
+        }
+
+        .products-hero-description {
+            max-width: 720px;
+            color: #607487;
+            font-size: 18px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .catalogue-stats {
+            position: relative;
+            z-index: 5;
+            margin-top: -48px;
+        }
+
+        .catalogue-stats-inner {
+            background: #ffffff;
+            border: 1px solid #e1e9ef;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            box-shadow: 0 18px 45px rgba(25, 65, 95, 0.09);
+            overflow: hidden;
+        }
+
+        .catalogue-stat {
+            padding: 25px 28px;
+            border-right: 1px solid #e4ebf0;
+        }
+
+        .catalogue-stat:last-child {
+            border-right: none;
+        }
+
+        .catalogue-stat strong {
+            display: block;
+            color: #123a57;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .catalogue-stat span {
+            color: #748596;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .catalogue-main {
+            padding: 55px 0 85px;
+        }
+
+        .catalogue-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 28px;
+        }
+
+        .catalogue-heading h2 {
+            color: #12324c;
+            font-size: clamp(30px, 4vw, 42px);
+            margin: 0 0 7px;
+        }
+
+        .catalogue-heading p {
+            color: #708293;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .catalogue-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e7f4fc;
+            border: 1px solid #cae5f6;
+            color: #0b67b2;
+            border-radius: 30px;
+            padding: 9px 15px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .catalogue-badge-dot {
+            width: 7px;
+            height: 7px;
+            background: #0b67b2;
+            border-radius: 50%;
+        }
+
+        .product-search-panel {
+            background: #ffffff;
+            border: 1px solid #dde8ef;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(23, 60, 88, 0.06);
+            margin-bottom: 22px;
+        }
+
+        .product-search-label {
+            display: block;
+            color: #173a54;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 11px;
+        }
+
+        .product-search-row {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+        }
+
+        .product-search-wrap {
+            position: relative;
+            flex: 1;
+        }
+
+        .product-search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7c8e9f;
+            font-size: 20px;
+            pointer-events: none;
+        }
+
+        #searchInput {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 17px 50px 17px 51px;
+            border: 1px solid #cbd8e2;
+            border-radius: 10px;
+            background: #fbfdff;
+            color: #243b4e;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s ease;
+        }
+
+        #searchInput:focus {
+            background: #ffffff;
+            border-color: #0b67b2;
+            box-shadow: 0 0 0 3px rgba(11, 103, 178, 0.08);
+        }
+
+        #searchInput::placeholder {
+            color: #97a5b2;
+        }
+
+        #clearSearch {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border: 0;
+            background: transparent;
+            color: #7a8c9b;
+            font-size: 19px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #clearSearch:hover {
+            color: #12324c;
+        }
+
+        .search-button {
+            border: 0;
+            background: #0b67b2;
+            color: #ffffff;
+            padding: 0 26px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.2s ease;
+        }
+
+        .search-button:hover {
+            background: #095897;
+        }
+
+        .search-help {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            margin-top: 14px;
+        }
+
+        #status {
+            color: #5d7183;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .search-hint {
+            color: #8b9aa8;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #dde7ee;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(23, 60, 88, 0.05);
+        }
+
+        .table-topbar {
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 1px solid #e4ebf0;
+            background: #ffffff;
+        }
+
+        .table-topbar-left strong {
+            display: block;
+            color: #173a54;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .table-topbar-left span {
+            color: #8494a3;
+            font-size: 12px;
+        }
+
+        .table-scroll-note {
+            color: #8293a1;
+            font-size: 12px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1180px;
+        }
+
+        .products-table th {
+            background: #0c3858;
+            color: #ffffff;
+            padding: 15px 14px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .products-table td {
+            padding: 14px;
+            border-bottom: 1px solid #e6edf2;
+            color: #4f6273;
+            font-size: 13px;
+            line-height: 1.5;
+            vertical-align: top;
+        }
+
+        .products-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .products-table tbody tr:hover td {
+            background: #f5faff;
+        }
+
+        .products-table td:nth-child(1),
+        .products-table td:nth-child(2),
+        .products-table td:nth-child(4),
+        .products-table td:nth-child(6),
+        .products-table td:nth-child(8),
+        .products-table td:nth-child(9) {
+            white-space: nowrap;
+        }
+
+        .products-table td:nth-child(3) {
+            color: #173a54;
+            font-weight: 600;
+            min-width: 230px;
+        }
+
+        .price {
+            color: #0b67b2 !important;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px !important;
+            color: #788a99 !important;
+            font-size: 14px !important;
+        }
+
+        .catalogue-note {
+            margin-top: 20px;
+            background: #eef7fd;
+            border: 1px solid #d7eaf6;
+            border-radius: 12px;
+            padding: 18px 21px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .catalogue-note-icon {
+            width: 27px;
+            height: 27px;
+            min-width: 27px;
+            border-radius: 50%;
+            background: #0b67b2;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .catalogue-note strong {
+            display: block;
+            color: #173a54;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .catalogue-note p {
+            color: #687c8c;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .products-enquiry {
+            background: #092d48;
+            padding: 68px 0;
+            color: #ffffff;
+        }
+
+        .products-enquiry-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .products-enquiry-text {
+            max-width: 680px;
+        }
+
+        .products-enquiry span {
+            color: #8fd2ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .products-enquiry h2 {
+            font-size: clamp(32px, 4vw, 46px);
+            line-height: 1.1;
+            margin: 12px 0 13px;
+        }
+
+        .products-enquiry p {
+            color: #c6d9e6;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .products-enquiry-actions {
+            display: flex;
+            gap: 11px;
+            flex-wrap: wrap;
+        }
+
+        .catalogue-contact-btn,
+        .catalogue-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 21px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .catalogue-contact-btn {
+            background: #ffffff;
+            color: #0b3b5c;
+        }
+
+        .catalogue-whatsapp-btn {
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+        }
+
+        @media (max-width: 950px) {
+
+            .catalogue-stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .catalogue-stat {
+                border-bottom: 1px solid #e4ebf0;
+            }
+
+            .catalogue-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .products-enquiry-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .products-hero {
+                padding: 62px 0 90px;
+            }
+
+            .catalogue-stats-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .catalogue-stat {
+                border-right: 0;
+            }
+
+            .product-search-row {
+                flex-direction: column;
+            }
+
+            .search-button {
+                min-height: 48px;
+            }
+
+            .search-help {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-hint {
+                text-align: left;
+            }
+
+            .table-topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .products-enquiry-actions {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="brand">
+            <img src="images/logo.jpeg" alt="Kremet Impex">
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="products.html" class="active">
+                Products
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="contact.html" class="nav-quote">
+                Get a Quote
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="products-page">
+
+
+<section class="products-hero">
+
+    <div class="container">
+
+        <div class="products-hero-content">
+
+            <div class="products-eyebrow">
+                PRODUCT CATALOGUE
+            </div>
+
+            <h1>
+                Find the product
+                <span>you need.</span>
+            </h1>
+
+            <p class="products-hero-description">
+                Explore our extensive catalogue and search using
+                product name, catalogue code, item number, CAS number,
+                specification or HSN.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="catalogue-stats">
+
+    <div class="container">
+
+        <div class="catalogue-stats-inner">
+
+            <div class="catalogue-stat">
+
+                <strong>83,000+</strong>
+
+                <span>
+                    Product listings
+                </span>
+
+            </div>
+
+
+            <div class="catalogue-stat">
+
+                <strong>Multi-Brand</strong>
+
+                <span>
+                    Broad catalogue coverage
+                </span>
+
+            </div>
+
+
+            <div class="catalogue-stat">
+
+                <strong>Bulk Supply</strong>
+
+                <span>
+                    Commercial quantity support
+                </span>
+
+            </div>
+
+
+            <div class="catalogue-stat">
+
+                <strong>Custom Sourcing</strong>
+
+                <span>
+                    Send us specific requirements
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="catalogue-main">
+
+    <div class="container">
+
+
+        <div class="catalogue-heading">
+
+            <div>
+
+                <h2>
+                    Search the catalogue
+                </h2>
+
+                <p>
+                    Enter any available product detail to find matching products.
+                </p>
+
+            </div>
+
+
+            <div class="catalogue-badge">
+
+                <span class="catalogue-badge-dot"></span>
+
+                Catalogue Available
+
+            </div>
+
+        </div>
+
+
+        <div class="product-search-panel">
+
+            <label for="searchInput" class="product-search-label">
+                What are you looking for?
+            </label>
+
+            <div class="product-search-row">
+
+                <div class="product-search-wrap">
+
+                    <span class="product-search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        autocomplete="off"
+                        placeholder="Try: Abietic Acid, 514-10-3, A0001-25G..."
+                    >
+
+                    <button
+                        id="clearSearch"
+                        type="button"
+                        aria-label="Clear search">
+                        ×
+                    </button>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="search-button"
+                    id="searchButton">
+                    Search Products
+                </button>
+
+            </div>
+
+
+            <div class="search-help">
+
+                <div id="status">
+                    Loading catalogue...
+                </div>
+
+                <div class="search-hint">
+                    Search by name · code · item · CAS · specification · HSN
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-card">
+
+            <div class="table-topbar">
+
+                <div class="table-topbar-left">
+
+                    <strong>
+                        Product Results
+                    </strong>
+
+                    <span>
+                        Product information is displayed exactly as available in the catalogue.
+                    </span>
+
+                </div>
+
+                <span class="table-scroll-note">
+                    Scroll horizontally to view all details →
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="products-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Code</th>
+                            <th>Item</th>
+                            <th>Product Name</th>
+                            <th>CAS No.</th>
+                            <th>Specification</th>
+                            <th>Pack Size</th>
+                            <th>Price</th>
+                            <th>HSN</th>
+                            <th>GST</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="productTableBody">
+
+                        <tr>
+
+                            <td colspan="9" class="no-results">
+                                Loading products...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="catalogue-note">
+
+            <div class="catalogue-note-icon">
+                i
+            </div>
+
+            <div>
+
+                <strong>
+                    Can't find the product you need?
+                </strong>
+
+                <p>
+                    Our catalogue may not represent every sourcing possibility.
+                    Share your product name, CAS number, specification, pack size
+                    and required quantity with us for assistance.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="products-enquiry">
+
+    <div class="container products-enquiry-inner">
+
+        <div class="products-enquiry-text">
+
+            <span>
+                PRODUCT ENQUIRY
+            </span>
+
+            <h2>
+                Need a quotation or bulk quantity?
+            </h2>
+
+            <p>
+                Send us the product details and required quantity.
+                Our team can assist with availability, sourcing and
+                commercial requirements.
+            </p>
+
+        </div>
+
+
+        <div class="products-enquiry-actions">
+
+            <a href="contact.html"
+               class="catalogue-contact-btn">
+
+                Request a Quote
+
+            </a>
+
+            <a href="https://wa.me/917400031404"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="catalogue-whatsapp-btn">
+
+                WhatsApp Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.jpeg"
+                    alt="Kremet Impex">
+
+                <p>
+                    Trading Excellence.<br>
+                    Delivering Trust.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Products
+                </h4>
+
+                <a href="products.html">
+                    Product Catalogue
+                </a>
+
+                <a href="products.html">
+                    Laboratory Chemicals
+                </a>
+
+                <a href="products.html">
+                    Industrial Chemicals
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a href="tel:+917400031404">
+                    +91 7400031404
+                </a>
+
+                <a href="mailto:kremetimpex@gmail.com">
+                    kremetimpex@gmail.com
+                </a>
+
+                <span>
+                    Mulund West, Mumbai
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Kremet Impex. All rights reserved.
+            </p>
+
+            <p>
+                GSTIN: 27AAWFK2672B1ZI
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<a href="https://wa.me/917400031404"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    WhatsApp
+
+</a>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+    let allProducts = [];
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const tableBody =
+        document.getElementById("productTableBody");
+
+    const status =
+        document.getElementById("status");
+
+    const clearSearch =
+        document.getElementById("clearSearch");
+
+    const searchButton =
+        document.getElementById("searchButton");
+
+
+    fetch("data/products.json")
+
+        .then(response => {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Could not load products.json"
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+        .then(products => {
+
+            allProducts = products;
+
+            showDefaultProducts();
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+            status.textContent =
+                "Unable to load catalogue.";
+
+            tableBody.innerHTML = `
+                <tr>
+                    <td colspan="9"
+                        class="no-results">
+
+                        Unable to load product data.
+
+                    </td>
+                </tr>
+            `;
+
+        });
+
+
+    function showDefaultProducts() {
+
+        status.textContent =
+            allProducts.length.toLocaleString() +
+            " products available — showing first 100";
+
+        renderProducts(
+            allProducts.slice(0, 100)
+        );
+
+    }
+
+
+    function performSearch() {
+
+        const query =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+        clearSearch.style.display =
+            query ? "block" : "none";
+
+
+        if (!query) {
+
+            showDefaultProducts();
+
+            return;
+
+        }
+
+
+        const results =
+            allProducts.filter(product => {
+
+                return (
+
+                    String(
+                        product.code || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.item || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.name || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.cas || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.specification || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.packSize || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                    ||
+
+                    String(
+                        product.hsn || ""
+                    )
+                        .toLowerCase()
+                        .includes(query)
+
+                );
+
+            });
+
+
+        if (results.length > 200) {
+
+            status.textContent =
+                results.length.toLocaleString() +
+                " matching products — showing first 200";
+
+        } else {
+
+            status.textContent =
+                results.length.toLocaleString() +
+                " matching products";
+
+        }
+
+
+        renderProducts(
+            results.slice(0, 200)
+        );
+
+    }
+
+
+    searchInput.addEventListener(
+        "input",
+        performSearch
+    );
+
+
+    searchInput.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                performSearch();
+
+            }
+
+        }
+    );
+
+
+    searchButton.addEventListener(
+        "click",
+        performSearch
+    );
+
+
+    clearSearch.addEventListener(
+        "click",
+        function() {
+
+            searchInput.value = "";
+
+            clearSearch.style.display =
+                "none";
+
+            showDefaultProducts();
+
+            searchInput.focus();
+
+        }
+    );
+
+
+    function renderProducts(products) {
+
+        tableBody.innerHTML = "";
+
+
+        if (products.length === 0) {
+
+            tableBody.innerHTML = `
+                <tr>
+                    <td colspan="9"
+                        class="no-results">
+
+                        No matching products found.
+                        Try another product name,
+                        code or CAS number.
+
+                    </td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        products.forEach(product => {
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${escapeHtml(product.code)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.item)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.name)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.cas)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.specification)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.packSize)}
+                </td>
+
+                <td class="price">
+                    ${formatPrice(product.price)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.hsn)}
+                </td>
+
+                <td>
+                    ${escapeHtml(product.gst)}
+                </td>
+
+            `;
+
+
+            tableBody.appendChild(row);
+
+        });
+
+    }
+
+
+    function escapeHtml(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+
+            .replace(/&/g, "&amp;")
+
+            .replace(/</g, "&lt;")
+
+            .replace(/>/g, "&gt;")
+
+            .replace(/"/g, "&quot;")
+
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    function formatPrice(value) {
+
+        if (
+            value === null ||
+            value === undefined ||
+            value === ""
+        ) {
+
+            return "";
+
+        }
+
+
+        if (
+            String(value)
+                .toUpperCase() === "POR"
+        ) {
+
+            return "POR";
+
+        }
+
+
+        const number =
+            Number(
+                String(value)
+                    .replace(/,/g, "")
+            );
+
+
+        if (
+            Number.isNaN(number)
+        ) {
+
+            return "₹" +
+                escapeHtml(value);
+
+        }
+
+
+        return "₹" +
+            number.toLocaleString(
+                "en-IN"
+            );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
